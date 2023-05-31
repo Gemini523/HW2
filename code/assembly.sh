@@ -39,7 +39,7 @@ Q3="../outputs/quast/SRR18214264"
 
 #ERR204044 kokybė gera.
 #SRR15131330 kokybė labai gera.
-#SRR18214264 kokybė prasčiausia iš visų, suprastėjo ties 3' galu.
+#SRR18214264 kokybė prasčiausia iš visų, suprastėja ties 3' galu.
 
 # Trimming process
 
@@ -122,6 +122,7 @@ Q3="../outputs/quast/SRR18214264"
 
 # KOMENTARAS
 #Renkuosi assembly po megahit. Genome fraction, largest alignment, N50, NG50, total lenght yra didesni nei spades (geresni įverčiai, nors ir nežymiai) 
+#ERR204044 coverage - 4136932, SRR15131330 coverage - 4000096, SRR18214264 coverage - 4154886.
 
 # mapping
 
@@ -192,15 +193,16 @@ Q3="../outputs/quast/SRR18214264"
 #tblastn -query ../references/prot.txt -db $MEGAHIT/$SRR15/$CONTIGS > $BLAST/$SRR15/blast_prot_info.txt;
 #tblastn -query ../references/prot.txt -db $MEGAHIT/$SRR18/$CONTIGS > $BLAST/$SRR18/blast_prot_info.txt;
 
-#blastn -query ../references/genes.txt -db  $MEGAHIT/$ERR/$CONTIGS -out $BLAST/$ERR/gene.fasta.blastn -outfmt 6 -evalue 1e-5
-#blastn -query ../references/genes.txt -db  $MEGAHIT/$SRR15/$CONTIGS -out $BLAST/$SRR15/gene.fasta.blastn -outfmt 6 -evalue 1e-5
-#blastn -query ../references/genes.txt -db  $MEGAHIT/$SRR18/$CONTIGS -out $BLAST/$SRR18/gene.fasta.blastn -outfmt 6 -evalue 1e-5
+#blastn -query ../references/genes.txt -db  $MEGAHIT/$ERR/$CONTIGS -out $BLAST/$ERR/gene.fasta.blastn -outfmt 6 -evalue 1e-75
+#blastn -query ../references/genes.txt -db  $MEGAHIT/$SRR15/$CONTIGS -out $BLAST/$SRR15/gene.fasta.blastn -outfmt 6 -evalue 1e-75
+#blastn -query ../references/genes.txt -db  $MEGAHIT/$SRR18/$CONTIGS -out $BLAST/$SRR18/gene.fasta.blastn -outfmt 6 -evalue 1e-75
 
-#tblastn -query ../references/prot.txt -db $MEGAHIT/$ERR/$CONTIGS -out $BLAST/$ERR/prot.fasta.blastn -outfmt 6 -evalue 1e-5
-#tblastn -query ../references/prot.txt -db $MEGAHIT/$SRR15/$CONTIGS -out $BLAST/$SRR15/prot.fasta.blastn -outfmt 6 -evalue 1e-5
-#tblastn -query ../references/prot.txt -db $MEGAHIT/$SRR18/$CONTIGS -out $BLAST/$SRR18/prot.fasta.blastn -outfmt 6 -evalue 1e-5
+#tblastn -query ../references/prot.txt -db $MEGAHIT/$ERR/$CONTIGS -out $BLAST/$ERR/prot.fasta.blastn -outfmt 6 -evalue 1e-75
+#tblastn -query ../references/prot.txt -db $MEGAHIT/$SRR15/$CONTIGS -out $BLAST/$SRR15/prot.fasta.blastn -outfmt 6 -evalue 1e-75
+#tblastn -query ../references/prot.txt -db $MEGAHIT/$SRR18/$CONTIGS -out $BLAST/$SRR18/prot.fasta.blastn -outfmt 6 -evalue 1e-75
 
 # KOMENTARAS
 #Su RAST: ERR204044 - rasta 2435 genų, SRR15131330 - 2605, SRR18214264 - 2446.
 #Su GeneMarkS2: ERR204044 - 2290 genų, SRR15131330 - 2517, SRR18214264 - 2309.
 #Su Blast: ERR204044 - rasta 2769 genų, SRR15131330 - 4669, SRR18214264 - 3047.
+#Su nurodyta e-value 1e-75 daugiausias genų skaičius buvo gautas su blast'u. 
